@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>插件设置</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet" href="/static/public/libs/layui-v2.5.6/layui/css/layui.css">
+    <link href="/static/public/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="/static/admin/static/css/main.css?v=#(version)" rel="stylesheet"/>
+    <link href="/static/themes/perfree/static/css/setting.css?v=#(version)" rel="stylesheet">
+</head>
+<body class="layui-layout-body">
+<div class="p-container">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">模型</label>
+                    <div class="layui-input-block" style="margin-left: 130px;width: 200px">
+                        <select name="LIVE2D_WIDGET_MODEL">
+                            <option value="//unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json" #(optionCompare('LIVE2D_WIDGET_MODEL', '//unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json') ? 'selected': '')>萌娘</option>
+                            <option value="//unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json" #(optionCompare('LIVE2D_WIDGET_MODEL', '//unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json') ? 'selected': '')>小可爱(女)</option>
+                            <option value="//unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json" #(optionCompare('LIVE2D_WIDGET_MODEL', '//unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json') ? 'selected': '')>小可爱(男)</option>
+                            <option value="//unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json" #(optionCompare('LIVE2D_WIDGET_MODEL', '//unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json') ? 'selected': '')>初音</option>
+                            <option value="//unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json" #(optionCompare('LIVE2D_WIDGET_MODEL', '//unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json') ? 'selected': '')>小帅哥</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">显示位置</label>
+                    <div class="layui-input-block" style="margin-left: 130px;width: 200px">
+                        <select name="LIVE2D_WIDGET_POSITION">
+                            <option value="left" #(optionCompare('LIVE2D_WIDGET_POSITION', 'left') ? 'selected': '')>left</option>
+                            <option value="right" #(optionCompare('LIVE2D_WIDGET_POSITION', 'right') ? 'selected': '')>right</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">小屏幕是否显示</label>
+                    <div class="layui-input-block" style="margin-left: 130px;width: 200px">
+                        <select name="LIVE2D_WIDGET_MOBILE_IS_SHOW">
+                            <option value="true" #(optionCompare('LIVE2D_WIDGET_MOBILE_IS_SHOW', 'true') ? 'selected': '')>true</option>
+                            <option value="false" #(optionCompare('LIVE2D_WIDGET_MOBILE_IS_SHOW', 'false') ? 'selected': '')>false</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">显示宽度</label>
+                    <div class="layui-input-block">
+                        <input type="number" value="#option('LIVE2D_WIDGET_WIDTH', '150')" name="LIVE2D_WIDGET_WIDTH" placeholder="显示宽度" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">显示高度</label>
+                    <div class="layui-input-block">
+                        <input type="number" value="#option('LIVE2D_WIDGET_HEIGHT', '300')" name="LIVE2D_WIDGET_HEIGHT" placeholder="显示高度" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">hOffset</label>
+                    <div class="layui-input-block">
+                        <input type="number" value="#option('LIVE2D_WIDGET_HOFFSET', '0')" name="LIVE2D_WIDGET_HOFFSET" placeholder="hOffset" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">vOffset</label>
+                    <div class="layui-input-block">
+                        <input type="number" value="#option('LIVE2D_WIDGET_VOFFSET', '0')" name="LIVE2D_WIDGET_HOFFSET" placeholder="vOffset" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="optionForm">保存设置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/static/public/libs/jquery/jquery-3.5.1.min.js"></script>
+<script src="/static/public/libs/layui-v2.5.6/layui/layui.js"></script>
+<script src="/static/public/js/main.js?v=#(version)"></script>
+<script>
+    let layer,form;
+    layui.use(['layer','form'], function() {
+        layer = layui.layer;
+        form = layui.form;
+        form.on('submit(optionForm)', function(data){
+            $.ajax({
+                type: "POST",
+                url: "/admin/setting/save",
+                contentType:"application/json",
+                data: JSON.stringify(data.field),
+                success:function(d){
+                    if (d.code === 200){
+                        parent.layer.msg("保存成功", {icon: 1})
+                    } else {
+                        layer.msg(d.msg, {icon: 2});
+                    }
+                },
+                error: function (data) {
+                    layer.msg("保存失败", {icon: 2});
+                }
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+</html>
