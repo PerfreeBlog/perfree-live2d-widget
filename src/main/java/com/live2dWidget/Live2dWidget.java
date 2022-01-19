@@ -5,10 +5,12 @@ import com.perfree.commons.Constants;
 import com.perfree.commons.OptionCacheUtil;
 import com.perfree.plugin.proxy.HtmlRenderProxy;
 import org.jsoup.nodes.Document;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@Component
 public class Live2dWidget extends HtmlRenderProxy {
 
     @Override

@@ -7,7 +7,7 @@
         <groupId>com.perfree</groupId>
         <version>1.0.0</version>
     </parent>
-    <version>2.2.0</version>
+    <version>2.2.1</version>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>perfree-live2d-widget</artifactId>
