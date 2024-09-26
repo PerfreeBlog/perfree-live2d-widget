@@ -1,17 +1,20 @@
 package com.live2dWidget;
 
-import cn.hutool.core.util.StrUtil;
-import com.perfree.commons.Constants;
-import com.perfree.commons.OptionCacheUtil;
+import com.perfree.cache.OptionCacheService;
 import com.perfree.plugin.proxy.HtmlRenderProxy;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.dromara.hutool.core.text.StrUtil;
 import org.jsoup.nodes.Document;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 @Component
 public class Live2dWidget extends HtmlRenderProxy {
+
+    @Resource
+    private OptionCacheService optionCacheService;
+
 
     @Override
     public Document editFrontDocument(Document document, HttpServletResponse response, HttpServletRequest request) {
@@ -36,13 +39,13 @@ public class Live2dWidget extends HtmlRenderProxy {
                 "            \"scale\": 0.5\n" +
                 "        }\n" +
                 "    });</script>";
-        String model = OptionCacheUtil.getDefaultValue("LIVE2D_WIDGET_MODEL", "//unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json");;
-        String position = OptionCacheUtil.getDefaultValue("LIVE2D_WIDGET_POSITION", "left");
-        String width = OptionCacheUtil.getDefaultValue("LIVE2D_WIDGET_WIDTH", "150");
-        String height = OptionCacheUtil.getDefaultValue("LIVE2D_WIDGET_HEIGHT", "300");
-        String hOffset = OptionCacheUtil.getDefaultValue("LIVE2D_WIDGET_HOFFSET", "0");
-        String vOffset = OptionCacheUtil.getDefaultValue("LIVE2D_WIDGET_VOFFSET", "0");
-        String mobileIsShow = OptionCacheUtil.getDefaultValue("LIVE2D_WIDGET_MOBILE_IS_SHOW", "false");
+        String model = optionCacheService.getDefaultValue("LIVE2D_WIDGET_MODEL", "//unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json");;
+        String position = optionCacheService.getDefaultValue("LIVE2D_WIDGET_POSITION", "left");
+        String width = optionCacheService.getDefaultValue("LIVE2D_WIDGET_WIDTH", "150");
+        String height = optionCacheService.getDefaultValue("LIVE2D_WIDGET_HEIGHT", "300");
+        String hOffset = optionCacheService.getDefaultValue("LIVE2D_WIDGET_HOFFSET", "0");
+        String vOffset = optionCacheService.getDefaultValue("LIVE2D_WIDGET_VOFFSET", "0");
+        String mobileIsShow = optionCacheService.getDefaultValue("LIVE2D_WIDGET_MOBILE_IS_SHOW", "false");
         js = StrUtil.format(js, model, position, width, height, hOffset, vOffset, mobileIsShow);
         document.body().append(js);
         return document;

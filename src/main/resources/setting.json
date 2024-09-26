@@ -1,0 +1,179 @@
+{
+  "option": {
+    "form": {
+      "inline": false,
+      "hideRequiredAsterisk": false,
+      "labelPosition": "right",
+      "size": "default",
+      "labelWidth": "125px"
+    },
+    "resetBtn": {
+      "show": false,
+      "innerText": "重置"
+    },
+    "submitBtn": {
+      "show": true,
+      "innerText": "提交"
+    }
+  },
+  "rule": [
+    {
+      "type": "select",
+      "field": "LIVE2D_WIDGET_MODEL",
+      "title": "模型",
+      "info": "看板娘模型",
+      "effect": {
+        "fetch": ""
+      },
+      "$required": false,
+      "props": {
+        "placeholder": "请选择模型"
+      },
+      "options": [
+        {
+          "label": "萌娘",
+          "value": "//unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json"
+        },
+        {
+          "label": "小可爱(女)",
+          "value": "//unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json"
+        },
+        {
+          "label": "小可爱(男)",
+          "value": "//unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json"
+        },
+        {
+          "label": "初音",
+          "value": "//unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json"
+        },
+        {
+          "label": "小帅哥",
+          "value": "//unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json"
+        }
+      ],
+      "_fc_id": "id_F6v0m1ix0tcpacc",
+      "name": "ref_Fdmwm1ix0tcpadc",
+      "display": true,
+      "hidden": false,
+      "_fc_drag_tag": "select"
+    },
+    {
+      "type": "select",
+      "field": "LIVE2D_WIDGET_POSITION",
+      "title": "显示位置",
+      "info": "显示位置",
+      "effect": {
+        "fetch": ""
+      },
+      "$required": false,
+      "props": {
+        "placeholder": "请选择显示位置"
+      },
+      "options": [
+        {
+          "label": "左侧",
+          "value": "left"
+        },
+        {
+          "label": "右侧",
+          "value": "right"
+        }
+      ],
+      "_fc_id": "id_Fsmtm1ix262fafc",
+      "name": "ref_Fqmkm1ix262fagc",
+      "display": true,
+      "hidden": false,
+      "_fc_drag_tag": "select"
+    },
+    {
+      "type": "select",
+      "field": "LIVE2D_WIDGET_MOBILE_IS_SHOW",
+      "title": "选择器",
+      "info": "小屏幕是否显示",
+      "effect": {
+        "fetch": ""
+      },
+      "$required": false,
+      "props": {
+        "placeholder": "请选择小屏幕是否显示"
+      },
+      "options": [
+        {
+          "label": "显示",
+          "value": "true"
+        },
+        {
+          "label": "不显示",
+          "value": "false"
+        }
+      ],
+      "_fc_id": "id_Fg21m1ix3lteaic",
+      "name": "ref_F7wmm1ix3lteajc",
+      "display": true,
+      "hidden": false,
+      "_fc_drag_tag": "select"
+    },
+    {
+      "type": "inputNumber",
+      "field": "LIVE2D_WIDGET_WIDTH",
+      "title": "显示宽度",
+      "info": "显示宽度",
+      "$required": false,
+      "props": {
+        "placeholder": "显示宽度",
+        "min": 0
+      },
+      "_fc_id": "id_F9oom1ix847vb0c",
+      "name": "ref_Fa0om1ix847vb1c",
+      "display": true,
+      "hidden": false,
+      "_fc_drag_tag": "inputNumber"
+    },
+    {
+      "type": "inputNumber",
+      "field": "LIVE2D_WIDGET_HEIGHT",
+      "title": "显示高度",
+      "info": "显示高度",
+      "$required": false,
+      "props": {
+        "placeholder": "显示高度",
+        "min": 0
+      },
+      "_fc_id": "id_Fv1hm1ix81ecaxc",
+      "name": "ref_F2ngm1ix81ecayc",
+      "display": true,
+      "hidden": false,
+      "_fc_drag_tag": "inputNumber"
+    },
+    {
+      "type": "inputNumber",
+      "field": "LIVE2D_WIDGET_HOFFSET",
+      "title": "hOffset",
+      "info": "hOffset",
+      "$required": false,
+      "props": {
+        "placeholder": "hOffset"
+      },
+      "_fc_id": "id_Fkn5m1ix7g95auc",
+      "name": "ref_F1m8m1ix7g95avc",
+      "display": true,
+      "hidden": false,
+      "_fc_drag_tag": "inputNumber"
+    },
+    {
+      "type": "inputNumber",
+      "field": "LIVE2D_WIDGET_VOFFSET",
+      "title": "vOffset",
+      "info": "vOffset",
+      "$required": false,
+      "props": {
+        "placeholder": "vOffset"
+      },
+      "_fc_id": "id_Ft9cm1ix8x7yb3c",
+      "name": "ref_Fia6m1ix8x7yb4c",
+      "display": true,
+      "hidden": false,
+      "_fc_drag_tag": "inputNumber"
+    }
+  ]
+}
