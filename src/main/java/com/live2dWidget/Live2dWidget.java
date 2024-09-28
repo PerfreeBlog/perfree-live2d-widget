@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Live2dWidget extends HtmlRenderProxy {
 
+    private final String OPTION_IDENTIFICATION = "plugin_perfree-live2d-widget";
+
     @Resource
     private OptionCacheService optionCacheService;
 
@@ -39,13 +41,13 @@ public class Live2dWidget extends HtmlRenderProxy {
                 "            \"scale\": 0.5\n" +
                 "        }\n" +
                 "    });</script>";
-        String model = optionCacheService.getDefaultValue("LIVE2D_WIDGET_MODEL", "//unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json");;
-        String position = optionCacheService.getDefaultValue("LIVE2D_WIDGET_POSITION", "left");
-        String width = optionCacheService.getDefaultValue("LIVE2D_WIDGET_WIDTH", "150");
-        String height = optionCacheService.getDefaultValue("LIVE2D_WIDGET_HEIGHT", "300");
-        String hOffset = optionCacheService.getDefaultValue("LIVE2D_WIDGET_HOFFSET", "0");
-        String vOffset = optionCacheService.getDefaultValue("LIVE2D_WIDGET_VOFFSET", "0");
-        String mobileIsShow = optionCacheService.getDefaultValue("LIVE2D_WIDGET_MOBILE_IS_SHOW", "false");
+        String model = optionCacheService.getDefaultValue("LIVE2D_WIDGET_MODEL", OPTION_IDENTIFICATION,"//unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json");;
+        String position = optionCacheService.getDefaultValue("LIVE2D_WIDGET_POSITION", OPTION_IDENTIFICATION,"left");
+        String width = optionCacheService.getDefaultValue("LIVE2D_WIDGET_WIDTH", OPTION_IDENTIFICATION,"150");
+        String height = optionCacheService.getDefaultValue("LIVE2D_WIDGET_HEIGHT", OPTION_IDENTIFICATION,"300");
+        String hOffset = optionCacheService.getDefaultValue("LIVE2D_WIDGET_HOFFSET", OPTION_IDENTIFICATION,"0");
+        String vOffset = optionCacheService.getDefaultValue("LIVE2D_WIDGET_VOFFSET", OPTION_IDENTIFICATION,"0");
+        String mobileIsShow = optionCacheService.getDefaultValue("LIVE2D_WIDGET_MOBILE_IS_SHOW", OPTION_IDENTIFICATION,"false");
         js = StrUtil.format(js, model, position, width, height, hOffset, vOffset, mobileIsShow);
         document.body().append(js);
         return document;

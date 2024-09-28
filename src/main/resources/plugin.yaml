@@ -10,7 +10,7 @@ plugin:
   # 插件最低支持版本
   minimalVersion: 4.0.0
   # 插件版本
-  version: 4.0.0
+  version: 4.0.1
   # 插件静态资源路径
   staticLocations: /ui/
   # 是否为开发环境(如果是插件前端通过node运行,需要开启dev且设置前端开发环境地址)
